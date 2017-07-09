@@ -69,6 +69,16 @@ public extension Reactive where Base: NSViewController {
     github "devxoul/RxViewController"
     ```
 
+## Contributing
+
+Any discussions and pull requests are welcomed 💖
+
+To create a Xcode project:
+
+```console
+$ swift package generate-xcodeproj
+```
+
 ## License
 
 RxViewController is under MIT license. See the [LICENSE](LICENSE) file for more info.

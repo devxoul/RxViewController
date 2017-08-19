@@ -31,4 +31,4 @@ script:
     CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -J 'RxViewController'
+  - bash <(curl -s https://codecov.io/bash) -J 'RxViewController' -X xcodeplist

@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RxExpect",
+        "repositoryURL": "https://github.com/devxoul/RxExpect.git",
+        "state": {
+          "branch": "swift-4.0",
+          "revision": "b3726078bf37f699da9e7566b16c996e94e8d321",
+          "version": null
+        }
+      },
+      {
+        "package": "RxSwift",
+        "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
+        "state": {
+          "branch": "rxswift4.0-swift4.0",
+          "revision": "7d344f6ca02683f6a52e61839ae0e01ecd4981eb",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

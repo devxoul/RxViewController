@@ -118,6 +118,30 @@ final class UIViewControllerTests: XCTestCase {
       XCTAssertEqual(events.at(100...).filter(.next).count, 1)
     }
   }
+
+    func testIsVisible() {
+        let test = RxExpect()
+        let viewController = UIViewController()
+        test.scheduler.scheduleAt(100) { viewController.viewDidAppear(false) }
+        test.scheduler.scheduleAt(200) { viewController.viewWillDisappear(false) }
+        test.assert(viewController.rx.isVisible) { events in
+            XCTAssertEqual(events.at(..<100).filter(.next).count, 0)
+            XCTAssertEqual(events.at(100...).filter(.next).first?.value.element ?? false, true)
+            XCTAssertEqual(events.at(200...).filter(.next).first?.value.element ?? true, false)
+        }
+    }
+
+    func testIsDismissing() {
+        let test = RxExpect()
+        let viewController = UIViewController()
+        test.scheduler.scheduleAt(100) { viewController.viewDidAppear(false) }
+        test.scheduler.scheduleAt(200) { viewController.dismiss(animated: false) }
+        test.assert(viewController.rx.isDismissing) { events in
+            XCTAssertEqual(events.at(..<200).filter(.next).count, 0)
+            XCTAssertEqual(events.at(200...).filter(.next).count, 1)
+        }
+    }
+
 }
 #endif
 

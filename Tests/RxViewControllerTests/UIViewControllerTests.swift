@@ -12,8 +12,8 @@ final class UIViewControllerTests: XCTestCase {
     let viewController = UIViewController()
     test.scheduler.scheduleAt(100) { viewController.viewDidLoad() }
     test.assert(viewController.rx.viewDidLoad) { events in
-      XCTAssertEqual(events.at(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.at(100...).filter(.next).count, 1)
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
     }
   }
 
@@ -22,9 +22,9 @@ final class UIViewControllerTests: XCTestCase {
     let viewController = UIViewController()
     test.scheduler.scheduleAt(100) { viewController.viewWillAppear(false) }
     test.assert(viewController.rx.viewWillAppear) { events in
-      XCTAssertEqual(events.at(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.at(100...).filter(.next).count, 1)
-      XCTAssertEqual(events.at(100...).filter(.next).first?.value.element, false)
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
+      XCTAssertEqual(events.in(100...).filter(.next).first?.value.element, false)
     }
   }
 
@@ -33,9 +33,9 @@ final class UIViewControllerTests: XCTestCase {
     let viewController = UIViewController()
     test.scheduler.scheduleAt(100) { viewController.viewDidAppear(false) }
     test.assert(viewController.rx.viewDidAppear) { events in
-      XCTAssertEqual(events.at(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.at(100...).filter(.next).count, 1)
-      XCTAssertEqual(events.at(100...).filter(.next).first?.value.element, false)
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
+      XCTAssertEqual(events.in(100...).filter(.next).first?.value.element, false)
     }
   }
 
@@ -44,9 +44,9 @@ final class UIViewControllerTests: XCTestCase {
     let viewController = UIViewController()
     test.scheduler.scheduleAt(100) { viewController.viewWillDisappear(false) }
     test.assert(viewController.rx.viewWillDisappear) { events in
-      XCTAssertEqual(events.at(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.at(100...).filter(.next).count, 1)
-      XCTAssertEqual(events.at(100...).filter(.next).first?.value.element, false)
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
+      XCTAssertEqual(events.in(100...).filter(.next).first?.value.element, false)
     }
   }
 
@@ -55,9 +55,9 @@ final class UIViewControllerTests: XCTestCase {
     let viewController = UIViewController()
     test.scheduler.scheduleAt(100) { viewController.viewDidDisappear(false) }
     test.assert(viewController.rx.viewDidDisappear) { events in
-      XCTAssertEqual(events.at(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.at(100...).filter(.next).count, 1)
-      XCTAssertEqual(events.at(100...).filter(.next).first?.value.element, false)
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
+      XCTAssertEqual(events.in(100...).filter(.next).first?.value.element, false)
     }
   }
 
@@ -66,8 +66,8 @@ final class UIViewControllerTests: XCTestCase {
     let viewController = UIViewController()
     test.scheduler.scheduleAt(100) { viewController.viewWillLayoutSubviews() }
     test.assert(viewController.rx.viewWillLayoutSubviews) { events in
-      XCTAssertEqual(events.at(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.at(100...).filter(.next).count, 1)
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
     }
   }
 
@@ -76,8 +76,8 @@ final class UIViewControllerTests: XCTestCase {
     let viewController = UIViewController()
     test.scheduler.scheduleAt(100) { viewController.viewDidLayoutSubviews() }
     test.assert(viewController.rx.viewDidLayoutSubviews) { events in
-      XCTAssertEqual(events.at(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.at(100...).filter(.next).count, 1)
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
     }
   }
 
@@ -88,10 +88,10 @@ final class UIViewControllerTests: XCTestCase {
     test.scheduler.scheduleAt(100) { viewController.willMove(toParentViewController: parentViewController) }
     test.scheduler.scheduleAt(200) { viewController.willMove(toParentViewController: nil) }
     test.assert(viewController.rx.willMoveToParentViewController) { events in
-      XCTAssertEqual(events.at(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.at(100...).filter(.next).count, 2)
-      XCTAssertEqual(events.at(100...).filter(.next).first?.value.element ?? nil, parentViewController)
-      XCTAssertEqual(events.at(200...).filter(.next).first?.value.element ?? nil, nil)
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 2)
+      XCTAssertEqual(events.in(100...).filter(.next).first?.value.element ?? nil, parentViewController)
+      XCTAssertEqual(events.in(200...).filter(.next).first?.value.element ?? nil, nil)
     }
   }
 
@@ -102,10 +102,10 @@ final class UIViewControllerTests: XCTestCase {
     test.scheduler.scheduleAt(100) { viewController.didMove(toParentViewController: parentViewController) }
     test.scheduler.scheduleAt(200) { viewController.didMove(toParentViewController: nil) }
     test.assert(viewController.rx.didMoveToParentViewController) { events in
-      XCTAssertEqual(events.at(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.at(100...).filter(.next).count, 2)
-      XCTAssertEqual(events.at(100...).filter(.next).first?.value.element ?? nil, parentViewController)
-      XCTAssertEqual(events.at(200...).filter(.next).first?.value.element ?? nil, nil)
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 2)
+      XCTAssertEqual(events.in(100...).filter(.next).first?.value.element ?? nil, parentViewController)
+      XCTAssertEqual(events.in(200...).filter(.next).first?.value.element ?? nil, nil)
     }
   }
 
@@ -114,8 +114,8 @@ final class UIViewControllerTests: XCTestCase {
     let viewController = UIViewController()
     test.scheduler.scheduleAt(100) { viewController.didReceiveMemoryWarning() }
     test.assert(viewController.rx.didReceiveMemoryWarning) { events in
-      XCTAssertEqual(events.at(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.at(100...).filter(.next).count, 1)
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
     }
   }
 
@@ -125,9 +125,9 @@ final class UIViewControllerTests: XCTestCase {
         test.scheduler.scheduleAt(100) { viewController.viewDidAppear(false) }
         test.scheduler.scheduleAt(200) { viewController.viewWillDisappear(false) }
         test.assert(viewController.rx.isVisible) { events in
-            XCTAssertEqual(events.at(..<100).filter(.next).count, 0)
-            XCTAssertEqual(events.at(100...).filter(.next).first?.value.element ?? false, true)
-            XCTAssertEqual(events.at(200...).filter(.next).first?.value.element ?? true, false)
+            XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+            XCTAssertEqual(events.in(100...).filter(.next).first?.value.element ?? false, true)
+            XCTAssertEqual(events.in(200...).filter(.next).first?.value.element ?? true, false)
         }
     }
 
@@ -137,8 +137,8 @@ final class UIViewControllerTests: XCTestCase {
         test.scheduler.scheduleAt(100) { viewController.viewDidAppear(false) }
         test.scheduler.scheduleAt(200) { viewController.dismiss(animated: false) }
         test.assert(viewController.rx.isDismissing) { events in
-            XCTAssertEqual(events.at(..<200).filter(.next).count, 0)
-            XCTAssertEqual(events.at(200...).filter(.next).count, 1)
+            XCTAssertEqual(events.in(..<200).filter(.next).count, 0)
+            XCTAssertEqual(events.in(200...).filter(.next).count, 1)
         }
     }
 

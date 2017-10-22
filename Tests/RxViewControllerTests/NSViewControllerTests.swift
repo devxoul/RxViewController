@@ -3,90 +3,77 @@ import AppKit
 import XCTest
 
 import RxExpect
-import RxTest
-
 import RxViewController
+import RxTest
 
 final class NSViewControllerTests: XCTestCase {
   func testViewDidLoad() {
-    RxExpect { test in
-      let viewController = NSViewController()
-      test.assert(viewController.rx.viewDidLoad).filterNext().isEmpty()
-    }
-    RxExpect { test in
-      let viewController = NSViewController()
-      test.scheduler.scheduleAt(0) { viewController.viewDidLoad() }
-      test.assert(viewController.rx.viewDidLoad).filterNext().count(1)
+    let test = RxExpect()
+    let viewController = NSViewController()
+    test.scheduler.scheduleAt(100) { viewController.viewDidLoad() }
+    test.assert(viewController.rx.viewDidLoad) { events in
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
     }
   }
 
   func testViewWillAppear() {
-    RxExpect { test in
-      let viewController = NSViewController()
-      test.assert(viewController.rx.viewWillAppear).filterNext().isEmpty()
-    }
-    RxExpect { test in
-      let viewController = NSViewController()
-      test.scheduler.scheduleAt(0) { viewController.viewWillAppear() }
-      test.assert(viewController.rx.viewWillAppear).filterNext().count(1)
+    let test = RxExpect()
+    let viewController = NSViewController()
+    test.scheduler.scheduleAt(100) { viewController.viewWillAppear() }
+    test.assert(viewController.rx.viewWillAppear) { events in
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
     }
   }
+
   func testViewDidAppear() {
-    RxExpect { test in
-      let viewController = NSViewController()
-      test.assert(viewController.rx.viewDidAppear).filterNext().isEmpty()
-    }
-    RxExpect { test in
-      let viewController = NSViewController()
-      test.scheduler.scheduleAt(0) { viewController.viewDidAppear() }
-      test.assert(viewController.rx.viewDidAppear).filterNext().count(1)
+    let test = RxExpect()
+    let viewController = NSViewController()
+    test.scheduler.scheduleAt(100) { viewController.viewDidAppear() }
+    test.assert(viewController.rx.viewDidAppear) { events in
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
     }
   }
 
   func testViewWillDisappear() {
-    RxExpect { test in
-      let viewController = NSViewController()
-      test.assert(viewController.rx.viewWillDisappear).filterNext().isEmpty()
-    }
-    RxExpect { test in
-      let viewController = NSViewController()
-      test.scheduler.scheduleAt(0) { viewController.viewWillDisappear() }
-      test.assert(viewController.rx.viewWillDisappear).filterNext().count(1)
-    }
-  }
-  func testViewDidDisappear() {
-    RxExpect { test in
-      let viewController = NSViewController()
-      test.assert(viewController.rx.viewDidDisappear).filterNext().isEmpty()
-    }
-    RxExpect { test in
-      let viewController = NSViewController()
-      test.scheduler.scheduleAt(0) { viewController.viewDidDisappear() }
-      test.assert(viewController.rx.viewDidDisappear).filterNext().count(1)
+    let test = RxExpect()
+    let viewController = NSViewController()
+    test.scheduler.scheduleAt(100) { viewController.viewWillDisappear() }
+    test.assert(viewController.rx.viewWillDisappear) { events in
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
     }
   }
 
-  
-  func testViewWillLayout() {
-    RxExpect { test in
-      let viewController = NSViewController()
-      test.assert(viewController.rx.viewWillLayout).filterNext().isEmpty()
-    }
-    RxExpect { test in
-      let viewController = NSViewController()
-      test.scheduler.scheduleAt(0) { viewController.viewWillLayout() }
-      test.assert(viewController.rx.viewWillLayout).filterNext().count(1)
+  func testViewDidDisappear() {
+    let test = RxExpect()
+    let viewController = NSViewController()
+    test.scheduler.scheduleAt(100) { viewController.viewDidDisappear() }
+    test.assert(viewController.rx.viewDidDisappear) { events in
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
     }
   }
-  func testViewDidLayout() {
-    RxExpect { test in
-      let viewController = NSViewController()
-      test.assert(viewController.rx.viewDidLayout).filterNext().isEmpty()
+
+  func testViewWillLayout() {
+    let test = RxExpect()
+    let viewController = NSViewController()
+    test.scheduler.scheduleAt(100) { viewController.viewWillLayout() }
+    test.assert(viewController.rx.viewWillLayout) { events in
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
     }
-    RxExpect { test in
-      let viewController = NSViewController()
-      test.scheduler.scheduleAt(0) { viewController.viewDidLayout() }
-      test.assert(viewController.rx.viewDidLayout).filterNext().count(1)
+  }
+
+  func testViewDidLayout() {
+    let test = RxExpect()
+    let viewController = NSViewController()
+    test.scheduler.scheduleAt(100) { viewController.viewDidLayout() }
+    test.assert(viewController.rx.viewDidLayout) { events in
+      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
+      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
     }
   }
 }

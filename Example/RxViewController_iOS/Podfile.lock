@@ -1,0 +1,23 @@
+PODS:
+  - RxCocoa (3.5.0):
+    - RxSwift (~> 3.4)
+  - RxSwift (3.5.0)
+  - RxViewController (0.2.0):
+    - RxCocoa (>= 3.0.0)
+    - RxSwift (>= 3.0.0)
+
+DEPENDENCIES:
+  - RxViewController (from `../../`)
+
+EXTERNAL SOURCES:
+  RxViewController:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
+  RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
+  RxViewController: 2140c29adb7e1e90055b2b1bc9988c09962e03b3
+
+PODFILE CHECKSUM: 563f873b585c689ef5ae0eb228bfc9762f38a793
+
+COCOAPODS: 1.2.1

@@ -1,6 +1,6 @@
 # RxViewController
 
-![Swift](https://img.shields.io/badge/Swift-4.0-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
 [![CocoaPods](http://img.shields.io/cocoapods/v/RxViewController.svg)](https://cocoapods.org/pods/RxViewController)
 [![Build Status](https://travis-ci.org/devxoul/RxViewController.svg?branch=master)](https://travis-ci.org/devxoul/RxViewController)
 [![codecov](https://img.shields.io/codecov/c/github/devxoul/RxViewController.svg)](https://codecov.io/gh/devxoul/RxViewController)

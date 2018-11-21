@@ -10,9 +10,8 @@
 		7DAC9E8621A578B200A15A31 /* RxViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DAC9E8421A578B200A15A31 /* RxViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DAC9E8E21A578FB00A15A31 /* NSViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC9E8C21A578FB00A15A31 /* NSViewController+Rx.swift */; };
 		7DAC9E8F21A578FB00A15A31 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC9E8D21A578FB00A15A31 /* UIViewController+Rx.swift */; };
-		7DAC9E9421A57AC000A15A31 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAC9E9121A57AC000A15A31 /* RxCocoa.framework */; };
-		7DAC9E9521A57AC000A15A31 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAC9E9221A57AC000A15A31 /* RxSwift.framework */; };
-		7DAC9E9621A57AC000A15A31 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAC9E9321A57AC000A15A31 /* RxAtomic.framework */; };
+		7DAC9ED821A5B86300A15A31 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAC9ED521A5B86300A15A31 /* RxCocoa.framework */; };
+		7DAC9EDC21A5BFBB00A15A31 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAC9EDB21A5BFBB00A15A31 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +20,8 @@
 		7DAC9E8521A578B200A15A31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DAC9E8C21A578FB00A15A31 /* NSViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSViewController+Rx.swift"; sourceTree = "<group>"; };
 		7DAC9E8D21A578FB00A15A31 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
-		7DAC9E9121A57AC000A15A31 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		7DAC9E9221A57AC000A15A31 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		7DAC9E9321A57AC000A15A31 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
+		7DAC9ED521A5B86300A15A31 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		7DAC9EDB21A5BFBB00A15A31 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,9 +29,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DAC9E9421A57AC000A15A31 /* RxCocoa.framework in Frameworks */,
-				7DAC9E9521A57AC000A15A31 /* RxSwift.framework in Frameworks */,
-				7DAC9E9621A57AC000A15A31 /* RxAtomic.framework in Frameworks */,
+				7DAC9EDC21A5BFBB00A15A31 /* RxSwift.framework in Frameworks */,
+				7DAC9ED821A5B86300A15A31 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,9 +69,8 @@
 		7DAC9E9021A57AC000A15A31 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7DAC9E9321A57AC000A15A31 /* RxAtomic.framework */,
-				7DAC9E9121A57AC000A15A31 /* RxCocoa.framework */,
-				7DAC9E9221A57AC000A15A31 /* RxSwift.framework */,
+				7DAC9EDB21A5BFBB00A15A31 /* RxSwift.framework */,
+				7DAC9ED521A5B86300A15A31 /* RxCocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,15 +158,12 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 			);
 			name = "Copy Carthage Sources";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxAtomic.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

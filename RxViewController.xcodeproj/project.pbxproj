@@ -97,7 +97,6 @@
 				7DAC9E7D21A578B200A15A31 /* Frameworks */,
 				7DAC9E7E21A578B200A15A31 /* Headers */,
 				7DAC9E7F21A578B200A15A31 /* Resources */,
-				7DAC9E9721A57AC700A15A31 /* Copy Carthage Sources */,
 			);
 			buildRules = (
 			);
@@ -149,27 +148,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7DAC9E9721A57AC700A15A31 /* Copy Carthage Sources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-			);
-			name = "Copy Carthage Sources";
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7DAC9E7C21A578B200A15A31 /* Sources */ = {

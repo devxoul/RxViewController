@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "RxViewController"
-  s.version          = "0.4.1"
+  s.version          = "1.0.0"
   s.summary          = "RxSwift wrapper for UIViewController and NSViewController"
   s.homepage         = "https://github.com/devxoul/RxViewController"
   s.license          = { :type => "MIT", :file => "LICENSE" }

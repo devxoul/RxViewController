@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/devxoul/RxExpect.git",
         "state": {
           "branch": null,
-          "revision": "a95c9d1b6f4c43f5041912ed5ecbdcf47b48c9a7",
-          "version": "1.2.0"
+          "revision": "c3a3bb3d46ee831582c6619ecc48cda1cdbff890",
+          "version": "2.0.0"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
         "state": {
           "branch": null,
-          "revision": "0df62b4d562f8620d4b795b18e4adf0b631527a1",
-          "version": "4.3.1"
+          "revision": "b3e888b4972d9bc76495dd74d30a8c7fad4b9395",
+          "version": "5.0.1"
         }
       }
     ]

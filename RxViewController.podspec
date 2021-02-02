@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "RxViewController"
-  s.version          = "0.4.1"
+  s.version          = "2.0.0"
   s.summary          = "RxSwift wrapper for UIViewController and NSViewController"
   s.homepage         = "https://github.com/devxoul/RxViewController"
   s.license          = { :type => "MIT", :file => "LICENSE" }
@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
                          :tag => s.version.to_s }
   s.source_files = "Sources/**/*.swift"
   s.frameworks   = "Foundation"
-  s.dependency "RxSwift", "~> 5.0"
-  s.dependency "RxCocoa", "~> 5.0"
+  s.dependency "RxSwift", "~> 6.0"
+  s.dependency "RxCocoa", "~> 6.0"
 
   s.swift_version = "5.0"
   s.ios.deployment_target = "8.0"
